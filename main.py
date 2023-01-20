@@ -6,9 +6,9 @@ import gtts
 from googletrans import Translator
 from tika import parser
 
-pdf = parser.from_file('pdfTest.pdf')
+pdf = parser.from_file('b7.pdf')
 print(pdf['content'])
 
-tts = gtts.gTTS(pdf['content'], lang='ru')
-tts.save('audiobook.mp3')
+tts = gtts.gTTS(pdf['content'], lang='en')
+tts.save('audiobook2.mp3')
 
