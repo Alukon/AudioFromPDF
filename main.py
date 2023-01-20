@@ -9,6 +9,10 @@ from tika import parser
 pdf = parser.from_file('b7.pdf')
 print(pdf['content'])
 
-tts = gtts.gTTS(pdf['content'], lang='en')
-tts.save('audiobook2.mp3')
+translator = Translator()
+translated = translator.translate(pdf['content'], dest='ru')
+translated_2 = translated.text
+
+tts = gtts.gTTS(translated_2, lang='ru')
+tts.save('audiobook3.mp3')
 
